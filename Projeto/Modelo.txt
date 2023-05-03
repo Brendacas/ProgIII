@@ -1,0 +1,24 @@
+Tema: Educação 4.0
+Sub Tema: Sistema Escolar
+
+Classes: Pessoa, aluno, Disciplina, Sistema;
+
+Classe Pessoa -> 
+    Atributos:
+        Protected String nome, Protected Data dataNascimento, Protected String email;
+Classe Sistema ->
+    Atributos:
+        Protected String usuario, Protected String senha;
+    Metodos: 
+        cadastrarAluno, cadastrarProfessor, jubilar, login, verificaUsuario;
+Classe Professor ->
+    Atributos: 
+        protected int ID, protected String disciplina;
+    Metodos:
+        cadastrarDisciplina,admitirAtividade;
+Classe Aluno ->
+    Atributos:
+        protected int matricula;
+    Metodos:
+        calcularMedia, submeterAtividade, verificarNota, trancamento;
+
