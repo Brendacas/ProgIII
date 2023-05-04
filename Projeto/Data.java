@@ -1,4 +1,4 @@
-package LP3.Projeto;
+
 public class Data {
     private int day, month, year;
     private String[] week = { "Sabado", "Domingo", "Segunda", "Terca", "Quarta", "Quinta",

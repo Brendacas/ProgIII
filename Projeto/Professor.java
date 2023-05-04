@@ -1,18 +1,16 @@
 
-package LP3.Projeto;
-import java.util.Scanner;
-
 public class Professor extends Pessoa {
     protected int iD;
+    Disciplina disciplina;
 
-    Scanner scan = new Scanner(System.in);
-
-
+   
     //Construtor
-    public Professor(String nome, String email, double cpf, Data data, int id){
+    public Professor(String nome, String email, String cpf, Data data, int id, Disciplina disciplina) {
         super(nome, email, cpf, data);
         this.iD = id;
+        this.disciplina = disciplina;
     }
+    
 
     //get e set
 
@@ -22,6 +20,11 @@ public class Professor extends Pessoa {
 
     public void setID(int iD) {
         this.iD = iD;
+    }
+
+    
+    public void adicionaNotaAluno(float nota, Aluno aluno) {
+        disciplina.adicionaNota(nota);
     }
 
     //Métodos

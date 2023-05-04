@@ -1,15 +1,13 @@
 
-abstract class Disciplina extends Professor{
+abstract class Disciplina {
     protected String nomeDisciplina, codigoDisciplina;
     protected float[] notas;
     protected int cargaHoraria, creditos = 0;
-    private static boolean status = false;
     private static int cont = 0;
     
     // construtor
-    public Disciplina(String nome, String email, double cpf, Data data, int id, String nomeDisciplina, String codigoDisciplina,  int creditos,
-    int cargaHoraria) {
-        super(nome, email,cpf,data,id);
+    public Disciplina(String nomeDisciplina, String codigoDisciplina,  int creditos, int cargaHoraria) {
+       
     
         this.nomeDisciplina = nomeDisciplina;
         this.codigoDisciplina = codigoDisciplina;
@@ -17,6 +15,7 @@ abstract class Disciplina extends Professor{
         if(verificarCreditos())
             this.creditos = creditos;
     }
+    
 
     // getter's
     public String getNomeDisciplina() {
@@ -30,6 +29,9 @@ abstract class Disciplina extends Professor{
     public int getCredito(){
         return creditos;
     }
+    public float[] getNotas(){
+        return notas;
+    }
 
     // setter's
     public void setNomeDisciplina(String nomeDisciplina) {
@@ -39,6 +41,11 @@ abstract class Disciplina extends Professor{
     public void setCodigoDisciplina(String codigoDisciplina) {
         this.codigoDisciplina = codigoDisciplina;
     }
+
+    public void setNotas(float[] notas){
+        this.notas = notas;
+    }
+
 
 
     //Métodos
@@ -50,8 +57,8 @@ abstract class Disciplina extends Professor{
     public void adicionaNota (float nota){
         if(cont <= creditos) notas[cont++] = nota;
     }
-
-    private boolean calcularMedia(float[] notas, int creditos) {
+    
+    protected boolean calcularMedia(float[] notas, int creditos) {
         float somaNotas = 0;
         int somaCreditos = 0;
         for (int i = 0; i < notas.length; i++) {
@@ -65,11 +72,12 @@ abstract class Disciplina extends Professor{
         }else{
             System.out.println("sua nota eh: "+ media + ",REPROVADO");
         }
+        return false;
     }
   
 
-    public String toString (){
+   /*  public String toString (){
         return "Cod: " + codigoDisciplina + " Disciplina " + nomeDisciplina + " C/Horaria: " + cargaHoraria +
         "Creditos: " + creditos + "\n" + "Docente: " + Professor.getNomeString();
-    }
+    }*/
 }

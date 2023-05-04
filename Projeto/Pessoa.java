@@ -1,11 +1,11 @@
-package LP3.Projeto;
+
 public class Pessoa{
     protected Data nascimentoData;
     protected String nomeString, emailString, enderecoString;
-    protected double cpfInt;
+    protected String cpfInt;
 
     //Construtores
-    public Pessoa (String nome, String email, double cpf, String endereco,int dia, int mes, int ano){
+    public Pessoa (String nome, String email, String cpf, String endereco,int dia, int mes, int ano){
         nomeString = nome;
         emailString = email;
         cpfInt = cpf;
@@ -13,7 +13,7 @@ public class Pessoa{
         nascimentoData = new Data(dia, mes, ano);
     }
 
-    public Pessoa (String nome, String email, double cpf, Data data){
+    public Pessoa (String nome, String email, String cpf, Data data){
         nomeString =  nome;
         emailString = email;
         cpfInt = cpf;
@@ -45,11 +45,11 @@ public class Pessoa{
         this.emailString = emailString;
     }
 
-    public double getCpfInt() {
+    public String getCpfInt() {
         return cpfInt;
     }
 
-    public void setCpfInt(double cpfInt) {
+    public void setCpfInt(String cpfInt) {
         this.cpfInt = cpfInt;
     }
     

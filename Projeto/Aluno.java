@@ -1,11 +1,12 @@
-package LP3.Projeto;
+
 public class Aluno extends Pessoa{
     protected int matricula;
-    //protected Disciplina disciplina;
+    protected Disciplina disciplina;
+  
 
 
-    public Aluno (String nome, String email, int cpf, int matricula, String endereco,int dia, int mes, int ano){
-        super(nome, email, cpf, endereco, dia, mes, ano);
+    public Aluno (String nome, String email, String cpf, int matricula, Data data){
+        super(nome, email, cpf, data);
         this.matricula = matricula;
     }
 
@@ -18,10 +19,14 @@ public class Aluno extends Pessoa{
     }
   
 
-    public void adicionarAtividade(String disciplina, String atividade) {
+    public void calcularMedia() {
+        float[] notas = disciplina.getNotas();
+        int creditos = disciplina.getCredito();
+        disciplina.calcularMedia(notas, creditos);
     }
+}
 
   
 
 
-}
+
