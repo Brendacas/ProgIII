@@ -18,7 +18,7 @@ public class Principal {
         robos[2] = new Robo2D(2.0, 2.0, 3.0);
         robos[3] = new Robo3D(1.6, 2.0, 3.0, 5.5);
 
-       
+        System.out.println("--------Iniciando-----------");
         for (Robo r : robos) {
             double distancia = r.calcularTempoTrajetoria(2,3,4);
             System.out.println("Distancia " + distancia);
@@ -26,6 +26,7 @@ public class Principal {
             r.moverX(2);
             r.moverY(3);
             r.moverZ(2);
+            System.out.println("-------------------------");
         }
       
     }
